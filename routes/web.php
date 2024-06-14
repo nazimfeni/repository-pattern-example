@@ -14,14 +14,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-// routes/web.php
-
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'show'])
 ->where('id', '[0-9]+')
 ->name('users.show');
